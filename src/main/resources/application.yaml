@@ -2,21 +2,21 @@ spring:
   application:
     name: outbox
   datasource:
-    driver-class-name:
-    url:
-    username:
-    password:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: passw0rd
 
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
       naming:
-        physical-strategy:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
-        dialect:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
 server:
-  port:9191
+  port: 9191
